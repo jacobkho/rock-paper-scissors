@@ -9,7 +9,45 @@
 
 <body>
     <script>
-        console.log("Hello")
+        function getComputerChoice() {
+            let value = Math.floor(Math.random() * 3) + 1;
+            let computerPick;
+            if (value === 1) {
+                computerPick = "rock";
+            } else if (value === 2) {
+                computerPick = "paper";
+            } else {
+                computerPick = "scissors";
+            }
+            return computerPick; // Return the computer's choice
+        }
+        
+        console.log(getComputerChoice());
+
+
+        /*
+        function getHumanChoice() {
+            return humanWeapon;
+        }
+
+        let humanWeapon = prompt("Choose rock, paper, or scissors");
+        let humanChoice = humanWeapon.toLowerCase();
+
+        if (humanChoice === getComputerChoice) {
+            console.log("tie");
+        } else if (
+            (humanChoice === "rock" && getComputerChoice === "scissors") ||
+            (humanChoice === "scissors" && getComputerChoice === "paper") ||
+            (humanChoice === "paper" && getComputerChoice === "rock")
+        ) {
+            console.log("You win");
+        } else {
+            console.log("Computer wins");
+        }
+
+        document.write(getHumanChoice());
+*/
+
     </script>
 </body>
 
