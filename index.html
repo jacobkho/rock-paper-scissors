@@ -9,103 +9,104 @@
 
 <body>
     <script>
-        /*
-          function getComputerChoice() {
-                  let value = Math.floor(Math.random() * 3) + 1;
-                  let computerPick;
-                  if (value === 1) {
-                      computerPick = "rock";
-                  } else if (value === 2) {
-                      computerPick = "paper";
-                  } else {
-                      computerPick = "scissors";
-                  }
-                  return computerPick; // Return the computer's choice
-              }
-      */
-        function getHumanChoice() {
-            let popup = prompt('Choose Rock, Paper, or Scissors.', 'Enter Choice');
-            if (popup) {
-                return popup.toLowerCase();
-            }
-            return null;
-        }
-
-        let counter = 0;
-        let correctAnswer = false;
-
-        while (!correctAnswer && counter < 10) {
-            counter++;
-            let userChoice = getHumanChoice();
-
-            if (userChoice === 'rock' || userChoice === 'paper' || userChoice === 'scissors') {
-                correctAnswer = true;
+        function getComputerChoice() {
+            let value = Math.floor(Math.random() * 3) + 1;
+            let computerPick;
+            if (value === 1) {
+                computerPick = "rock";
+            } else if (value === 2) {
+                computerPick = "paper";
             } else {
-                alert("Try Again");
-            }
+                computerPick = "scissors";
+            } return computerPick; // Return the computer's choice
         }
 
-        if (correctAnswer) {
-            alert("ok");
-        } else {
-            alert("sorry too many attempts");
+        console.log(getComputerChoice());
+
+        //human pick
+        function getHumanChoice() {
+            let userInput;
+
+            while (!['rock', 'paper', 'scissors'].includes(userInput?.toLowerCase())) {
+                userInput = prompt('Rock, Paper, or Scissors?', '').toLowerCase();
+
+                if (!['rock', 'paper', 'scissors'].includes(userInput)) {
+                    alert('Try again.');
+                }
+            }
+
+            return userInput;
         }
 
         console.log(getHumanChoice());
+
+        // keep score
+/*
+        function playRound(humanChoice, computerChoice) {
+            let humanScore = 0;
+            let computerScore = 0;
+            if (getComputerChoice() === getHumanChoice()) {
+                alert("tie");
+            } else if (
+                (humanChoice === 'rock' && computerChoice === 'scissors') ||
+                (humanChoice === 'paper' && computerChoice === 'rock') ||
+                (humanChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                alert('+1');
+                humanScore++;
+            } else {
+                alert('comp +1');
+                computerScore++;
+            }
+        }
+
+        function isGameOver(humanScore, computerScore) {
+            return humanScore === 5 || computerScore === 5;
+
+
+            while (!isGameOver(humanScore, computerScore)) {
+                let humanChoice = getHumanChoice();
+                if (!humanChoice || !['rock', 'paper', 'scissors'].includes(humanChoice)) {
+                    alert("Invalid choice, please try again.");
+                    continue;
+                }
+
+                let computerChoice = getComputerChoice();
+                playRound(humanChoice, computerChoice);
+                alert(`Score: Human ${humanScore} - Computer ${computerScore}`);
+            }
+
+            if (humanScore > computerScore) {
+                alert("Congratulations! You won the game.");
+            } else {
+                alert("Sorry! The computer won the game.");
+            }
+        }
+
+
+
         /*
-                let humanScore = 0;
-                let computerScore = 0;
-        
-                let user = ["Human", "Computer"];
-        
-                let isGameOver = (score) => {
-                    if (humanScore === 3 || computerScore === 3) {
-                        return
-                    }
-                }
-        
-                while (humanScore <= 2) {
-                    humanScore += 1;
-                }
-                while (computerScore <= 2) {
-                    computerScore += 1;
-                }
-                if getComputerChoice() === getHumanChoice() {
-                    alert("tie");
-                } else if
-                    (getComputerChoice() === 'rock' && getHumanChoice() === 'paper') ||
-                        (getComputerChoice() === 'paper' && getHumanChoice() === 'scissors') ||
-                        (getComputerChoice() === 'scissors' && getHumanChoice() === 'rock') {
-                    alert("you win");
-                    humanScore++;
-                } else {
-                    alert("you lose")
-                    computerScore++;
-                }
-        
-        
-                /*
-                function getHumanChoice() {
-                    return humanWeapon;
-                }
-        
-                let humanWeapon = prompt("Choose rock, paper, or scissors");
-                let humanChoice = humanWeapon.toLowerCase();
-        
-                if (humanChoice === getComputerChoice) {
-                    console.log("tie");
-                } else if (
-                    (humanChoice === "rock" && getComputerChoice === "scissors") ||
-                    (humanChoice === "scissors" && getComputerChoice === "paper") ||
-                    (humanChoice === "paper" && getComputerChoice === "rock")
-                ) {
-                    console.log("You win");
-                } else {
-                    console.log("Computer wins");
-                }
-        
-                document.write(getHumanChoice());
-        */
+        function getHumanChoice() {
+            return humanWeapon;
+        }
+ 
+        let humanWeapon = prompt("Choose rock, paper, or scissors");
+        let humanChoice = humanWeapon.toLowerCase();
+ 
+        if (humanChoice === getComputerChoice) {
+            console.log("tie");
+        } else if (
+            (humanChoice === "rock" && getComputerChoice === "scissors") ||
+            (humanChoice === "scissors" && getComputerChoice === "paper") ||
+            (humanChoice === "paper" && getComputerChoice === "rock")
+        ) {
+            console.log("You win");
+        } else {
+            console.log("Computer wins");
+        }
+ 
+        document.write(getHumanChoice());
+*/
 
     </script>
 </body>
